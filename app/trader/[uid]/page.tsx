@@ -81,7 +81,7 @@ export default async function TraderPage({ params }: Props) {
     const winRate = (trader.win_rate || 0) * 100
 
     const affiliateId = 'YOUR_ID_HERE'
-    const copyLink = `https://www.bybit.com/copyTrade/trade-center/detail?leaderMark=${trader.exchange_uid}&affiliate_id=${affiliateId}`
+    const copyLink = `https://www.bybit.com/`
 
     return (
         <main className="min-h-screen bg-slate-950 text-slate-50 relative pb-32">

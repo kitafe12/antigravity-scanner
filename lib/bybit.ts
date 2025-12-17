@@ -62,7 +62,7 @@ export async function fetchTopTraders(): Promise<TraderInsert[]> {
         win_rate: bot.win_rate,
         aum: bot.aum,
         trading_type: 'SPOT',
-        profile_url: `https://www.bybit.com/tradingbot/detail/${bot.exchange_uid}`,
+        profile_url: `https://www.bybit.com/`,
         last_updated: new Date().toISOString(),
     }))
 }
