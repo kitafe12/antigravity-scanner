@@ -18,7 +18,7 @@ export function TraderCard({ trader }: TraderCardProps) {
     const safetyScore = Math.max(0, 10 - (drawdownPercent / 2))
 
     const affiliateId = 'YOUR_ID_HERE'
-    const copyLink = `https://www.bitget.com/`
+    const copyLink = `https://www.bybit.com/copyTrade/trade-center/detail?leaderMark=${trader.exchange_uid}&affiliate_id=${affiliateId}`
 
     const isHighSafety = safetyScore >= 9
     const isHighGrowth = roiPercent > 50
