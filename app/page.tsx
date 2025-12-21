@@ -1,5 +1,324 @@
-import { redirect } from 'next/navigation'
+'use client'
 
-export default function Home() {
-  redirect('/scanner')
+import { Shield, TrendingUp, ExternalLink, Lock, Wallet, CheckCircle } from 'lucide-react'
+import { TabNavigation } from '@/components/TabNavigation'
+import { ProfitSimulator } from '@/components/ProfitSimulator'
+
+interface TradingBot {
+  id: string
+  name: string
+  pair: string
+  risk: 'Low' | 'Medium' | 'High'
+  apy: string
+  affiliateLink: string
+  botLink: string
+}
+
+// CASHFLOW BOTS (Grid Trading) - Only showing grid bots on Scanner page
+const GRID_BOTS: TradingBot[] = [
+  {
+    id: 'btc-grid',
+    name: 'Bitcoin Alpha',
+    pair: 'BTC/USDT',
+    risk: 'Low',
+    apy: '75.43%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGBTCUSDT'
+  },
+  {
+    id: 'eth-grid',
+    name: 'Ethereum Pro',
+    pair: 'ETH/USDT',
+    risk: 'Low',
+    apy: '126.89%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGETHUSDT'
+  },
+  {
+    id: 'sol-grid',
+    name: 'Solana Velocity',
+    pair: 'SOL/USDT',
+    risk: 'Medium',
+    apy: '73.48%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGSOLUSDT'
+  },
+  {
+    id: 'avax-grid',
+    name: 'Avalanche Momentum',
+    pair: 'AVAX/USDT',
+    risk: 'Medium',
+    apy: '31.87%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGAVAXUSDT'
+  },
+  {
+    id: 'link-grid',
+    name: 'Chainlink Oracle',
+    pair: 'LINK/USDT',
+    risk: 'Medium',
+    apy: '122.27%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGLINKUSDT'
+  },
+  {
+    id: 'xrp-grid',
+    name: 'Ripple Flow',
+    pair: 'XRP/USDT',
+    risk: 'Low',
+    apy: '142.59%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGXRPUSDT'
+  },
+  {
+    id: 'render-grid',
+    name: 'Render Network',
+    pair: 'RENDER/USDT',
+    risk: 'High',
+    apy: '18.12%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGRNDRUSDT'
+  },
+  {
+    id: 'near-grid',
+    name: 'Near Protocol',
+    pair: 'NEAR/USDT',
+    risk: 'Medium',
+    apy: '22.02%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGNEARUSDT'
+  },
+  {
+    id: 'inj-grid',
+    name: 'Injective Range',
+    pair: 'INJ/USDT',
+    risk: 'High',
+    apy: '42.82%',
+    affiliateLink: 'https://partner.bitget.com/bg/GSBD1Q',
+    botLink: 'https://partner.bitget.site/bg/AGINJUSDT'
+  }
+]
+
+export default function HomePage() {
+  const getRiskColor = (risk: string) => {
+    switch (risk) {
+      case 'Low': return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+      case 'Medium': return 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+      case 'High': return 'text-rose-400 bg-rose-500/10 border-rose-500/20'
+      default: return 'text-slate-400 bg-slate-500/10 border-slate-500/20'
+    }
+  }
+
+  return (
+    <main className="min-h-screen relative overflow-hidden bg-slate-950 pt-16">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 text-center border-b border-white/5 bg-slate-950">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-8 shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Optimized for Bitget AI
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
+            Ethical <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Crypto</span> Income.
+            <br />
+            <span className="text-slate-600">Zero Leverage.</span>
+          </h1>
+
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            Verified <span className="text-slate-200 font-medium">spot-only</span> trading bots that generate passive income through <span className="text-slate-200 font-medium">grid strategies</span> and <span className="text-slate-200 font-medium">DCA portfolios</span>.
+          </p>
+
+          <div className="flex justify-center gap-4 mb-16">
+            <a href="#bots" className="bg-emerald-500 hover:bg-emerald-400 text-white text-lg font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-emerald-500/20 transition-all transform hover:-translate-y-1">
+              Explore Bots
+            </a>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex items-center justify-center gap-3 text-slate-300 font-medium">
+              <div className="p-2 rounded bg-slate-800/50 text-emerald-400"><Shield size={16} /></div>
+              <span>Verified Safe</span>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex items-center justify-center gap-3 text-slate-300 font-medium">
+              <div className="p-2 rounded bg-slate-800/50 text-emerald-400"><TrendingUp size={16} /></div>
+              <span>Spot Only</span>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex items-center justify-center gap-3 text-slate-300 font-medium">
+              <div className="p-2 rounded bg-slate-800/50 text-emerald-400"><Shield size={16} /></div>
+              <span>Verified Safe</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tab Switcher */}
+      <section id="bots" className="container mx-auto px-4 pt-12">
+        <TabNavigation />
+
+        {/* Bot Grid */}
+        <div className="pb-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+              Grid Trading Bots
+              <span className="bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-full border border-slate-700">
+                {GRID_BOTS.length} Available
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {GRID_BOTS.map((bot) => (
+              <div
+                key={bot.id}
+                className="group bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">{bot.name}</h3>
+                    <p className="text-sm text-slate-400 font-mono">{bot.pair}</p>
+                  </div>
+                  <div className={`px-2 py-1 rounded-lg text-xs font-bold border ${getRiskColor(bot.risk)}`}>
+                    {bot.risk}
+                  </div>
+                </div>
+
+                {/* APY */}
+                <div className="mb-6 p-4 bg-slate-950/50 rounded-xl border border-slate-800">
+                  <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Est. Annual Return</div>
+                  <div className="text-3xl font-bold text-emerald-400 flex items-center gap-2">
+                    {bot.apy}
+                    {parseFloat(bot.apy) > 100 && <span className="text-2xl">🔥</span>}
+                  </div>
+                </div>
+
+                {/* Spot Strategy Badge */}
+                <div className="flex items-center gap-2 mb-6 px-3 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+                  <Shield size={14} className="text-emerald-400" />
+                  <span className="text-xs font-semibold text-emerald-400">🛡️ 100% Spot Strategy</span>
+                </div>
+
+                {/* Double Button Logic */}
+                <div className="space-y-3">
+                  {/* Button 1: Create Account */}
+                  <a
+                    href={bot.affiliateLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-between px-4 py-3 bg-transparent border-2 border-slate-700 text-slate-300 rounded-xl font-semibold hover:border-emerald-500/50 hover:text-emerald-400 transition-all group/btn"
+                  >
+                    <span>1. Create Account (Required)</span>
+                    <ExternalLink size={16} className="opacity-50 group-hover/btn:opacity-100" />
+                  </a>
+
+                  {/* Button 2: Start Bot */}
+                  <a
+                    href={bot.botLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-between px-4 py-3 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-400 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/20 group/btn"
+                  >
+                    <span>2. Start {bot.pair.split('/')[0]} Bot</span>
+                    <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Profit Simulator */}
+      <section id="calculator">
+        <ProfitSimulator />
+      </section>
+
+      {/* Reassurance Section */}
+      <section className="bg-slate-900 border-t border-white/5 py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Why Choose Ethical Automation?
+            </h2>
+            <p className="text-lg text-slate-400">
+              Professional grade tools. Zero fees. 100% Transparent.
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1: Spot Only Guarantee */}
+            <div className="bg-slate-950/50 border border-slate-800 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
+                <Lock className="text-emerald-400" size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Zero Leverage. Zero Debt.
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                We strictly use <span className="text-white font-medium">Spot Grid strategies</span>. Unlike futures trading, you never borrow money, never pay interest fees (No Riba), and face <span className="text-white font-medium">zero liquidation risk</span>. You own the underlying assets.
+              </p>
+            </div>
+
+            {/* Card 2: Non-Custodial Model */}
+            <div className="bg-slate-950/50 border border-slate-800 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
+                <Wallet className="text-cyan-400" size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Your Funds Stay Yours.
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                You never send us money. The bots run <span className="text-white font-medium">directly on your own Bitget Exchange account</span>. You maintain 100% control of your withdrawals and deposits at all times.
+              </p>
+            </div>
+
+            {/* Card 3: Business Model */}
+            <div className="bg-slate-950/50 border border-slate-800 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6">
+                <CheckCircle className="text-amber-400" size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                100% Free Software.
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                No monthly subscriptions. No hidden contracts. We are <span className="text-white font-medium">official partners</span> supported by the exchange's volume rebate program. You get the pro tools for free.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-12 border-t border-white/5 bg-slate-950">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Copyright & Links */}
+          <div className="text-center mb-6">
+            <p className="text-slate-500 text-sm mb-3">
+              © 2025 Antigravity Scanner. All rights reserved.
+            </p>
+            <div className="flex justify-center gap-4 text-xs text-slate-500">
+              <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+              <span>|</span>
+              <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+            </div>
+          </div>
+
+          {/* Risk Warning */}
+          <div className="text-center">
+            <p className="text-xs text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              <strong className="text-slate-500">Risk Warning:</strong> Cryptocurrency trading involves significant risk and may result in the loss of your capital. The trading bots and strategies listed on this platform are automated tools provided by Bitget. "Antigravity Scanner" is an educational interface and does not provide financial advice. Past performance of AI strategies is not a guarantee of future results. Please trade responsibly.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
 }
