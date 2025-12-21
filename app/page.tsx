@@ -158,6 +158,81 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="border-y border-white/5 bg-slate-900/30 py-16 sm:py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+              Don't Predict. <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">React.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+              How Volatility Harvesting turns fluctuations into profit.
+            </p>
+          </div>
+
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
+                  <span className="text-2xl font-bold text-emerald-400">1</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">
+                  AI Defines the Range
+                </h3>
+                <p className="text-slate-400 text-center leading-relaxed">
+                  The algorithm analyzes market data to find the perfect High/Low zone where the price oscillates.
+                </p>
+              </div>
+              {/* Arrow - Hidden on mobile */}
+              <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                <svg className="w-8 h-8 text-emerald-500/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
+                  <span className="text-2xl font-bold text-emerald-400">2</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">
+                  The Grid is Set
+                </h3>
+                <p className="text-slate-400 text-center leading-relaxed">
+                  The bot places buy/sell orders at every level within the range, creating a profit grid.
+                </p>
+              </div>
+              {/* Arrow - Hidden on mobile */}
+              <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                <svg className="w-8 h-8 text-emerald-500/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div>
+              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
+                  <span className="text-2xl font-bold text-emerald-400">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">
+                  Profit from Volatility
+                </h3>
+                <p className="text-slate-400 text-center leading-relaxed">
+                  Buy low, sell high automatically, 24/7. Every price swing generates profit without prediction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tab Switcher */}
       <section id="bots" className="container mx-auto px-4 pt-12">
         <TabNavigation />
