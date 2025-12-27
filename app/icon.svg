@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background matching your site -->
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  
+  <!-- Shield outline only - matching lucide-react Shield icon -->
+  <g transform="translate(8, 6)">
+    <path 
+      d="M8 0.5L0.5 3.5V9C0.5 13.418 3.981 17.332 8 18C12.019 17.332 15.5 13.418 15.5 9V3.5L8 0.5Z" 
+      fill="none"
+      stroke="#10b981"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>
