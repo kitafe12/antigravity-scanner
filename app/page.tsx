@@ -3,6 +3,7 @@
 import { Shield, TrendingUp, ExternalLink, Lock, Wallet, CheckCircle } from 'lucide-react'
 import { TabNavigation } from '@/components/TabNavigation'
 import { ProfitSimulator } from '@/components/ProfitSimulator'
+import { ConfigurationGuide } from '@/components/ConfigurationGuide'
 
 interface TradingBot {
   id: string
@@ -308,6 +309,11 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Configuration Guide */}
+      <section className="container mx-auto px-4 pb-20">
+        <ConfigurationGuide />
       </section>
 
       {/* Profit Simulator */}

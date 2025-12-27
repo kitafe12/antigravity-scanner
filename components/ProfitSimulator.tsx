@@ -154,7 +154,7 @@ export function ProfitSimulator() {
                                 <input
                                     type="number"
                                     value={investment}
-                                    onChange={(e) => setInvestment(Number(e.target.value))}
+                                    onChange={(e) => setInvestment(parseInt(e.target.value) || 0)}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-emerald-500 focus:outline-none transition-colors"
                                     min="10"
                                     step="10"
@@ -304,7 +304,7 @@ export function ProfitSimulator() {
                                 <input
                                     type="number"
                                     value={monthlyInvestment}
-                                    onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+                                    onChange={(e) => setMonthlyInvestment(parseInt(e.target.value) || 0)}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-cyan-500 focus:outline-none transition-colors"
                                     min="10"
                                     step="10"
@@ -476,7 +476,7 @@ export function ProfitSimulator() {
                                 <input
                                     type="number"
                                     value={portfolioAmount}
-                                    onChange={(e) => setPortfolioAmount(Number(e.target.value))}
+                                    onChange={(e) => setPortfolioAmount(parseInt(e.target.value) || 0)}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-purple-500 focus:outline-none transition-colors"
                                     min="1000"
                                     step="1000"
@@ -497,8 +497,8 @@ export function ProfitSimulator() {
                                                 key={strategyKey}
                                                 onClick={() => setSelectedStrategy(strategyKey)}
                                                 className={`w-full p-4 rounded-xl text-left transition-all ${selectedStrategy === strategyKey
-                                                        ? 'bg-purple-500/20 border-2 border-purple-500'
-                                                        : 'bg-slate-800 border-2 border-slate-700 hover:border-slate-600'
+                                                    ? 'bg-purple-500/20 border-2 border-purple-500'
+                                                    : 'bg-slate-800 border-2 border-slate-700 hover:border-slate-600'
                                                     }`}
                                             >
                                                 <div className="flex justify-between items-start">
