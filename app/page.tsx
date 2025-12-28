@@ -122,7 +122,7 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Optimized for Bitget AI
+            Optimized for Bitget & Bybit AI
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
@@ -261,9 +261,6 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-1">{bot.name}</h3>
                     <p className="text-sm text-slate-400 font-mono">{bot.pair}</p>
                   </div>
-                  <div className={`px-2 py-1 rounded-lg text-xs font-bold border ${getRiskColor(bot.risk)}`}>
-                    {bot.risk}
-                  </div>
                 </div>
 
                 {/* APY */}
@@ -281,28 +278,28 @@ export default function HomePage() {
                   <span className="text-xs font-semibold text-emerald-400">🛡️ 100% Spot Strategy</span>
                 </div>
 
-                {/* Double Button Logic */}
+                {/* Platform Choice Buttons */}
                 <div className="space-y-3">
-                  {/* Button 1: Create Account */}
-                  <a
-                    href={bot.affiliateLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-between px-4 py-3 bg-transparent border-2 border-slate-700 text-slate-300 rounded-xl font-semibold hover:border-emerald-500/50 hover:text-emerald-400 transition-all group/btn"
-                  >
-                    <span>1. Create Account (Required)</span>
-                    <ExternalLink size={16} className="opacity-50 group-hover/btn:opacity-100" />
-                  </a>
-
-                  {/* Button 2: Start Bot */}
+                  {/* Primary: Bitget AI Mode */}
                   <a
                     href={bot.botLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-between px-4 py-3 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-400 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/20 group/btn"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-400 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/20"
                   >
-                    <span>2. Start {bot.pair.split('/')[0]} Bot</span>
-                    <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                    <span>Start on Bitget (Use AI Mode)</span>
+                    <span className="text-lg">⚡</span>
+                  </a>
+
+                  {/* Secondary: Bybit Aurora AI */}
+                  <a
+                    href="https://partner.bybit.com/b/150570"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center justify-center gap-1"
+                  >
+                    <span>Or trade on Bybit (Use Aurora AI)</span>
+                    <span className="text-xs">↗</span>
                   </a>
                 </div>
               </div>

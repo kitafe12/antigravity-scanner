@@ -153,8 +153,11 @@ export function ProfitSimulator() {
                                 </label>
                                 <input
                                     type="number"
-                                    value={investment}
-                                    onChange={(e) => setInvestment(parseInt(e.target.value) || 0)}
+                                    value={investment || ''}
+                                    onChange={(e) => {
+                                        const val = e.target.value
+                                        setInvestment(val === '' ? 0 : parseInt(val))
+                                    }}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-emerald-500 focus:outline-none transition-colors"
                                     min="10"
                                     step="10"
@@ -303,8 +306,11 @@ export function ProfitSimulator() {
                                 </label>
                                 <input
                                     type="number"
-                                    value={monthlyInvestment}
-                                    onChange={(e) => setMonthlyInvestment(parseInt(e.target.value) || 0)}
+                                    value={monthlyInvestment || ''}
+                                    onChange={(e) => {
+                                        const val = e.target.value
+                                        setMonthlyInvestment(val === '' ? 0 : parseInt(val))
+                                    }}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-cyan-500 focus:outline-none transition-colors"
                                     min="10"
                                     step="10"
@@ -475,8 +481,11 @@ export function ProfitSimulator() {
                                 </label>
                                 <input
                                     type="number"
-                                    value={portfolioAmount}
-                                    onChange={(e) => setPortfolioAmount(parseInt(e.target.value) || 0)}
+                                    value={portfolioAmount || ''}
+                                    onChange={(e) => {
+                                        const val = e.target.value
+                                        setPortfolioAmount(val === '' ? 0 : parseInt(val))
+                                    }}
                                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white font-semibold focus:border-purple-500 focus:outline-none transition-colors"
                                     min="1000"
                                     step="1000"

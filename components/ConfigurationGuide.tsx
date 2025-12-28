@@ -33,6 +33,20 @@ export function ConfigurationGuide() {
             {/* Accordion Content */}
             {isOpen && (
                 <div className="px-6 py-6 border-t border-slate-800 space-y-8">
+                    {/* Info Alert: AI-First Approach */}
+                    <div className="p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl flex items-start gap-3">
+                        <div className="text-blue-400 flex-shrink-0 mt-0.5">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="text-sm text-blue-200">
+                                <strong className="font-semibold">ℹ️ Easy Setup:</strong> Click the button above to open the pair. Then, simply select <strong>'AI Strategy'</strong> (on Bitget) or <strong>'Aurora AI'</strong> (on Bybit) to let the exchange auto-configure the grid based on live market data.
+                            </p>
+                        </div>
+                    </div>
+
                     {/* Step 1: Basic Setup */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 mb-4">
@@ -61,7 +75,7 @@ export function ConfigurationGuide() {
                                     <div>
                                         <p className="text-white font-semibold mb-1">Use AI Parameters 🤖</p>
                                         <p className="text-sm text-slate-400">
-                                            Click "AI Parameter" to automatically configure the grid with optimal settings. The AI will set the price range, number of grids, and investment amount based on current market data.
+                                            Click "AI Parameter" (Bitget) or "Aurora AI" (Bybit) to automatically configure the grid with optimal settings. The AI will set the price range, number of grids, and investment amount based on current market data.
                                         </p>
                                     </div>
                                 </div>
@@ -139,7 +153,7 @@ export function ConfigurationGuide() {
                                 <div className="p-4 bg-emerald-500/5 border-2 border-emerald-500/30 rounded-xl space-y-3">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-white font-semibold text-sm">Trailing grid</span>
+                                            <span className="text-white font-semibold text-sm">Trailing Grid / Trailing Up</span>
                                             <Zap className="text-emerald-400" size={16} />
                                         </div>
                                         <div className="relative">
@@ -166,7 +180,7 @@ export function ConfigurationGuide() {
                                     <div className="flex items-start gap-2 mt-3 p-3 bg-emerald-900/20 rounded-lg">
                                         <AlertTriangle className="text-emerald-400 flex-shrink-0 mt-0.5" size={16} />
                                         <p className="text-xs text-emerald-300">
-                                            <strong>Why 1%:</strong> Makes the grid follow price up indefinitely. You never miss a pump, even if BTC hits a new All-Time High. The grid moves up automatically.
+                                            <strong>Check this box!</strong> On Bitget it's called 'Trailing Grid', on Bybit it's 'Trailing Up'. This feature allows your bot to follow the price to the moon automatically.
                                         </p>
                                     </div>
                                 </div>
