@@ -176,7 +176,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="relative">
-              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+              <div className="h-full bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
                   <span className="text-2xl font-bold text-emerald-400">1</span>
                 </div>
@@ -184,7 +184,7 @@ export default function HomePage() {
                   AI Defines the Range
                 </h3>
                 <p className="text-slate-400 text-center leading-relaxed">
-                  The algorithm analyzes market data to find the perfect High/Low zone where the price oscillates.
+                  Exchange AIs provide the engine, we provide the GPS. The scanner filters 500+ coins to identify the specific assets currently in the 'Green Zone' for maximum safety and yield.
                 </p>
               </div>
               {/* Arrow - Hidden on mobile */}
@@ -197,7 +197,7 @@ export default function HomePage() {
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+              <div className="h-full bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
                   <span className="text-2xl font-bold text-emerald-400">2</span>
                 </div>
@@ -218,15 +218,15 @@ export default function HomePage() {
 
             {/* Step 3 */}
             <div>
-              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
+              <div className="h-full bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-all">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 flex items-center justify-center mb-6 mx-auto">
                   <span className="text-2xl font-bold text-emerald-400">3</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 text-center">
-                  Profit from Volatility
+                  Profit & Rotate
                 </h3>
                 <p className="text-slate-400 text-center leading-relaxed">
-                  Buy low, sell high automatically, 24/7. Every price swing generates profit without prediction.
+                  Earn passive income 24/7 from volatility. When the market shifts, check the Scanner again to rotate profits into the next 'Green Zone' asset.
                 </p>
               </div>
             </div>
@@ -394,6 +394,21 @@ export default function HomePage() {
             <p className="text-xs text-slate-600 leading-relaxed max-w-3xl mx-auto">
               <strong className="text-slate-500">Risk Warning:</strong> Cryptocurrency trading involves significant risk and may result in the loss of your capital. The trading bots and strategies listed on this platform are automated tools provided by Bitget. "Antigravity Scanner" is an educational interface and does not provide financial advice. Past performance of AI strategies is not a guarantee of future results. Please trade responsibly.
             </p>
+
+            {/* Social Proof - Twitter Link */}
+            <div className="mt-4">
+              <a
+                href="https://x.com/AntigravityScan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs text-slate-600 hover:text-emerald-400 transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>Created by @AntigravityScan</span>
+              </a>
+            </div>
           </div>
         </div>
       </footer>
