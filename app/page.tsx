@@ -247,6 +247,14 @@ export default function HomePage() {
                 {GRID_BOTS.length} Available
               </span>
             </h2>
+
+            {/* Risk Level Explanation */}
+            <div className="hidden md:flex items-center gap-2 text-xs text-slate-500">
+              <span className="px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold">Low</span>
+              <span className="px-2 py-1 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 font-semibold">Medium</span>
+              <span className="px-2 py-1 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 font-semibold">High</span>
+              <span className="ml-2 text-slate-600">= Asset volatility</span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -260,6 +268,9 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">{bot.name}</h3>
                     <p className="text-sm text-slate-400 font-mono">{bot.pair}</p>
+                  </div>
+                  <div className={`px-2 py-1 rounded-lg text-xs font-bold border ${getRiskColor(bot.risk)}`}>
+                    {bot.risk}
                   </div>
                 </div>
 
