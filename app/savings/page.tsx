@@ -73,15 +73,30 @@ export default function SavingsPage() {
                                 </div>
                             </div>
 
-                            <a
-                                href="https://partner.bitget.site/bg/AGDCA"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-emerald-500/20 transition-all transform hover:-translate-y-1"
-                            >
-                                Configure Auto-Invest on Bitget
-                                <ArrowRight size={18} />
-                            </a>
+                            <div>
+                                <p className="text-xs text-slate-500 uppercase tracking-wider mb-3">Choose your platform:</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <a
+                                        href="https://partner.bitget.site/bg/AGDCA"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
+                                    >
+                                        <span>Bitget</span>
+                                        <ArrowRight size={16} />
+                                    </a>
+
+                                    <a
+                                        href="https://partner.bybit.com/b/150570"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+                                    >
+                                        <span>Bybit</span>
+                                        <ArrowRight size={16} />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
@@ -173,15 +188,30 @@ export default function SavingsPage() {
                                 </div>
                             </div>
 
-                            <a
-                                href="https://partner.bitget.site/bg/AGSMARTP"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all transform hover:-translate-y-1"
-                            >
-                                Create Smart Portfolio
-                                <ArrowRight size={18} />
-                            </a>
+                            <div>
+                                <p className="text-xs text-slate-500 uppercase tracking-wider mb-3">Choose your platform:</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <a
+                                        href="https://partner.bitget.site/bg/AGSMARTP"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
+                                    >
+                                        <span>Bitget</span>
+                                        <ArrowRight size={16} />
+                                    </a>
+
+                                    <a
+                                        href="https://partner.bybit.com/b/150570"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+                                    >
+                                        <span>Bybit</span>
+                                        <ArrowRight size={16} />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
