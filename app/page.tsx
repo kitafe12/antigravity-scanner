@@ -4,6 +4,7 @@ import { Shield, TrendingUp, ExternalLink, Lock, Wallet, CheckCircle } from 'luc
 import { TabNavigation } from '@/components/TabNavigation'
 import { ProfitSimulator } from '@/components/ProfitSimulator'
 import { ConfigurationGuide } from '@/components/ConfigurationGuide'
+import ArchitectToolkit from '@/components/ArchitectToolkit'
 
 interface TradingBot {
   id: string
@@ -234,6 +235,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Configuration Guide */}
+      <section className="container mx-auto px-4 py-16">
+        <ConfigurationGuide />
+      </section>
+
       {/* Tab Switcher */}
       <section id="bots" className="container mx-auto px-4 pt-12">
         <TabNavigation />
@@ -319,10 +325,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Configuration Guide */}
-      <section className="container mx-auto px-4 pb-20">
-        <ConfigurationGuide />
-      </section>
+      {/* Architect's Toolkit */}
+      <ArchitectToolkit />
 
       {/* Profit Simulator */}
       <section id="calculator">
