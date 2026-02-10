@@ -89,7 +89,7 @@ export default function ArchitectToolkit() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Card 1: Market Intelligence */}
           <ToolCard
             icon={<TrendingUp size={28} />}
@@ -100,24 +100,14 @@ export default function ArchitectToolkit() {
             accentColor="emerald"
           />
 
-          {/* Card 2: Digital Sovereignty */}
-          <ToolCard
-            icon={<Globe size={28} />}
-            title="Digital Sovereignty (NordVPN)"
-            description="Access global liquidity pools and protect your IP. Essential for executing trades without borders."
-            buttonText="Secure Connection"
-            link="INSERT_NORDVPN_LINK"
-            accentColor="cyan"
-          />
-
-          {/* Card 3: The Vault */}
+          {/* Card 2: The Vault */}
           <ToolCard
             icon={<Shield size={28} />}
             title="The Vault (Ledger)"
             description="Not your keys, not your coins. Move your profits to cold storage immediately after harvesting."
             buttonText="Secure Assets"
             link="https://shop.ledger.com/?r=331bf681973f"
-            accentColor="amber"
+            accentColor="cyan"
           />
         </div>
       </div>
