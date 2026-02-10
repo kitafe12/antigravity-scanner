@@ -318,6 +318,17 @@ export default function HomePage() {
                     <span>Or trade on Bybit (Use Aurora AI)</span>
                     <span className="text-xs">↗</span>
                   </a>
+
+                  {/* Restricted Region Notice */}
+                  <p className="text-center text-xs text-slate-500 italic mt-3 leading-relaxed">
+                    🌍 US or Restricted Region? Automation unavailable?<br />
+                    <a
+                      href="#toolkit"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      Equip your manual setup with professional tools below
+                    </a>
+                  </p>
                 </div>
               </div>
             ))}

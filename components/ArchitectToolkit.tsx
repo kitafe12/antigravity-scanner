@@ -76,7 +76,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ icon, title, description, buttonTex
 
 export default function ArchitectToolkit() {
   return (
-    <section className="bg-slate-900 border-t border-white/5 py-20 px-4">
+    <section id="toolkit" className="bg-slate-900 border-t border-white/5 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
