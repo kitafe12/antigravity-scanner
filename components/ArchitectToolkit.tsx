@@ -37,23 +37,23 @@ const ToolCard: React.FC<ToolCardProps> = ({ icon, title, description, buttonTex
   const classes = getAccentClasses();
 
   return (
-    <div className={`bg-slate-950/50 border border-slate-800 rounded-2xl p-8 ${classes.hoverBorder} transition-all hover:shadow-lg hover:shadow-emerald-500/10`}>
-      <div className={`w-14 h-14 rounded-xl ${classes.iconBg} border flex items-center justify-center mb-6`}>
+    <div className={`bg-slate-950/50 border border-slate-800 rounded-2xl p-6 sm:p-8 ${classes.hoverBorder} transition-all hover:shadow-lg hover:shadow-emerald-500/10`}>
+      <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${classes.iconBg} border flex items-center justify-center mb-5`}>
         <div className={classes.iconColor}>
           {icon}
         </div>
       </div>
-      <h3 className="text-xl font-bold text-white mb-3">
+      <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
         {title}
       </h3>
-      <p className="text-slate-400 leading-relaxed mb-6">
+      <p className="text-slate-400 leading-relaxed mb-6 text-sm sm:text-base">
         {description}
       </p>
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-400 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/20"
+        className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-400 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/20"
       >
         {buttonText}
         <svg
@@ -76,20 +76,20 @@ const ToolCard: React.FC<ToolCardProps> = ({ icon, title, description, buttonTex
 
 export default function ArchitectToolkit() {
   return (
-    <section id="toolkit" className="bg-slate-900 border-t border-white/5 py-20 px-4">
+    <section id="toolkit" className="bg-slate-900 border-t border-white/5 py-12 sm:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
             The Essential Tools
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-base sm:text-lg text-slate-400">
             The professional infrastructure required to run the system.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           {/* Card 1: Market Intelligence */}
           <ToolCard
             icon={<TrendingUp size={28} />}
